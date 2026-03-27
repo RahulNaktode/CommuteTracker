@@ -6,6 +6,7 @@ import Home from './view/Home'
 import Login from './view/Login'
 import Signup from './view/Signup'
 import Contact from './view/Contact'
+import MapLocator from './MapLocator'
 
 const root = createRoot(document.getElementById('root'));
 
@@ -16,6 +17,7 @@ root.render(
     <Route path='/login' element={<Login />} />
     <Route path='/signup' element={<Signup />} />
     <Route path='/contact' element={<Contact />} />
+    <Route path='/maplocator' element={<MapLocator />} />
   </Routes>
   </BrowserRouter>
 )
