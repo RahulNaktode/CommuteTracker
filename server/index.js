@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 8020;
 
 app.get('/', getHealth)
 app.post('/signup', postSignUp)
-app.post('/login', checkJWT, postLogin)
+app.post('/login', postLogin)
 
 app.listen(PORT, () => {
     console.log(`Server is running on PORT: ${PORT}`);
