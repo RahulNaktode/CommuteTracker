@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import propertyData from "./properties.json";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./MapLocator.css"; 
@@ -28,23 +29,7 @@ function MapLocator() {
   const [maxTime, setMaxTime] = useState(25);
   const [mode, setMode] = useState("driving");
 
-  const properties = useMemo(() => [
-    { id: 1, name: "Dharampeth Residency", price: "₹18k", lat: 21.141, lng: 79.068 },
-    { id: 2, name: "Ramdaspeth Flat", price: "₹22k", lat: 21.138, lng: 79.08 },
-    { id: 3, name: "Manish Nagar Heights", price: "₹15k", lat: 21.09, lng: 79.09 },
-    { id: 4, name: "Civil Lines Studio", price: "₹25k", lat: 21.155, lng: 79.075 },
-    { id: 5, name: "Pratap Nagar Apt", price: "₹17k", lat: 21.12, lng: 79.055 },
-    { id: 6, name: "Trimurti Nagar Rowhouse", price: "₹19k", lat: 21.115, lng: 79.04 },
-    { id: 7, name: "Wardha Road Hub", price: "₹21k", lat: 21.085, lng: 79.075 },
-    { id: 8, name: "Nandanvan Colony", price: "₹14k", lat: 21.135, lng: 79.12 },
-    { id: 9, name: "Beswa Enclave", price: "₹16k", lat: 21.095, lng: 79.11 },
-    { id: 10, name: "Lakadganj Appt", price: "₹13k", lat: 21.15, lng: 79.115 },
-    { id: 11, name: "Friend's Colony", price: "₹15k", lat: 21.17, lng: 79.045 },
-    { id: 12, name: "Zingabai Takli House", price: "₹12k", lat: 21.195, lng: 79.07 },
-    { id: 13, name: "Mihan Smart City", price: "₹24k", lat: 21.05, lng: 79.03 },
-    { id: 14, name: "Jaripatka Flat", price: "₹11k", lat: 21.19, lng: 79.095 },
-    { id: 15, name: "Ganeshpeth Central", price: "₹20k", lat: 21.145, lng: 79.095 },
-  ], []);
+ const properties = useMemo(() => propertyData, []);
 
   const getDistance = (lat1, lon1, lat2, lon2) => {
     const R = 6371;
